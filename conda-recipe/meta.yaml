@@ -1,12 +1,8 @@
-
 {% set data = load_setup_py_data() %}
-
 
 package:
     name    : ophyd_ads
-
     version : {{ data.get('version') }}
-
 
 source:
     path: ..
@@ -19,16 +15,13 @@ requirements:
     build:
       - python >=3.6
       - setuptools
-
     run:
-      - python >=3.6
+      - ophyd >=1.4
+      - pyads
 
 test:
     imports:
       - ophyd_ads
-
-    requires:
-      - pytest
 
 about:
   home: https://github.com/pcdshub/ophyd-ads

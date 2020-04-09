@@ -1,0 +1,36 @@
+
+{% set data = load_setup_py_data() %}
+
+
+package:
+    name    : ophyd_ads
+
+    version : {{ data.get('version') }}
+
+
+source:
+    path: ..
+
+build:
+    number: 1
+    noarch: python
+
+requirements:
+    build:
+      - python >=3.6
+      - setuptools
+
+    run:
+      - python >=3.6
+
+test:
+    imports:
+      - ophyd_ads
+
+    requires:
+      - pytest
+
+about:
+  home: https://github.com/pcdshub/ophyd-ads
+  license: SLAC Open License
+  summary: ophyd integration with Beckhoff TwinCAT 3 via pyads

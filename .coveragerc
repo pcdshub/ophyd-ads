@@ -1,0 +1,11 @@
+[run]
+source =
+    ophyd_ads
+[report]
+omit =
+    #versioning
+    .*version.*
+    *_version.py
+    #tests
+    *test*
+    ophyd_ads/tests/*

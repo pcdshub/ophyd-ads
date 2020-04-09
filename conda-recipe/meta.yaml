@@ -14,10 +14,11 @@ build:
 requirements:
     build:
       - python >=3.6
-      - setuptools
+      - pip
     run:
       - ophyd >=1.4
       - pyads
+      - pydm
 
 test:
     imports:

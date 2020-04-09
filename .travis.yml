@@ -3,14 +3,14 @@ dist: xenial
 sudo: false
 
 
-env: 
+env:
    global:
       - OFFICIAL_REPO="pcdshub/ophyd-ads"
-      
-      - secure: ""
-      
 
-matrix: 
+      - secure: ""
+
+
+matrix:
   fast_finish: true
   include:
     - name: Style checking
@@ -85,10 +85,10 @@ script:
     if [[ $UNIT_TEST ]]; then
       coverage report -m
     fi
-  
+
   - |
     if [[ -n "$DOCTR_DEPLOY_ENCRYPTION_KEY_PCDSHUB_OPHYD-ADS" && $BUILD_DOCS ]]; then
-      # Create HTML documentation  
+      # Create HTML documentation
       set -e
       pushd docs
       make html
@@ -97,7 +97,7 @@ script:
       doctr deploy . --built-docs docs/build/html --deploy-branch-name gh-pages --command "touch .nojekyll; git add .nojekyll"
       set +e
     fi
-   
+
 
 after_success:
   - |

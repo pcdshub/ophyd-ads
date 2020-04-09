@@ -1,12 +1,11 @@
 import logging
 
-from qtpy import QtCore, QtWidgets
-
 from ads_pcds import Symbol, get_connection, make_address, parse_address
 from ads_pcds.ads import enumerate_plc_symbols
 from pydm.data_plugins.plugin import (BaseParameterEditor, PyDMConnection,
                                       PyDMPlugin)
 from pydm.utilities.channel import parse_channel_config
+from qtpy import QtCore, QtWidgets
 
 logger = logging.getLogger(__name__)
 
